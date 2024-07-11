@@ -1,0 +1,19 @@
+.companies--index {
+  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.companies--text {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  width: 500px;
+  margin: 0 auto;
+  color: rgb(109, 106, 106);
+
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 38px;
+}
