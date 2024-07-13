@@ -4,6 +4,7 @@ import IndexPage from './routes/IndexPage'
 import ContactPage from './routes/ContactPage'
 import AboutPage from './routes/AboutPage'
 import LoginPage from './routes/LoginPage'
+import AuthLayout from './routes/AuthLayout'
 
 function App() {
   const router = createBrowserRouter([
@@ -20,8 +21,14 @@ function App() {
       element: <ContactPage />,
     },
     {
-      path: '/login',
-      element: <LoginPage />,
+      path: '/',
+      element: <AuthLayout />,
+      children: [
+        {
+          path: '/login',
+          element: <LoginPage />,
+        },
+      ],
     },
   ])
   return <RouterProvider router={router} />
