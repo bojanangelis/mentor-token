@@ -1,4 +1,3 @@
-import React from 'react'
 import './CompaniesIndexStyle.scss'
 import { companies } from '../utils/companies'
 
@@ -6,8 +5,8 @@ const CompaniesIndexComponent = () => {
   return (
     <>
       <div className='companies--index'>
-        {companies.map((company) => (
-          <img src={`/src/assets/${company}`} alt='company' />
+        {companies.map((company, i) => (
+          <img key={i} src={`/src/assets/${company}`} alt='company' />
         ))}
       </div>
       <p className='companies--text'>
