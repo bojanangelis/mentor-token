@@ -1,6 +1,6 @@
 import React from 'react'
 import './MainIndexStyle.scss'
-import ButtonComponent from './ButtonComponent'
+import ButtonComponent from '../ButtonComponent'
 import { Link } from 'react-router-dom'
 
 const MainIndexComponent = () => {

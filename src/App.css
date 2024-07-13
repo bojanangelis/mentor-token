@@ -52,3 +52,11 @@
   background-color: black;
   z-index: 99999;
 }
+
+.pt-4 {
+  padding-top: 20px;
+}
+
+.px-4 {
+  padding: 0 20px;
+}

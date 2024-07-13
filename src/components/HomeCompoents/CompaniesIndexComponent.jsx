@@ -1,5 +1,5 @@
 import './CompaniesIndexStyle.scss'
-import { companies } from '../utils/companies'
+import { companies } from '../../utils/companies'
 
 const CompaniesIndexComponent = () => {
   return (

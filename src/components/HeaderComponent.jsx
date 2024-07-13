@@ -1,9 +1,10 @@
-import React from 'react'
 import './HeaderStyle.scss'
 import ButtonComponent from './ButtonComponent'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const HeaderComponent = () => {
+  const location = useLocation()
+
   return (
     <header>
       <div className='logo'>
@@ -11,23 +12,23 @@ const HeaderComponent = () => {
       </div>
       <ul>
         <li>
-          <Link to='/' className='link'>
+          <Link to='/' className={`link ${location.pathname === '/' && 'active'}`}>
             Home
           </Link>
         </li>
         <li>
-          <Link to='/about' className='link'>
+          <Link to='/about' className={`link ${location.pathname === '/about' && 'active'}`}>
             About
           </Link>
         </li>
         <li>
-          <Link to='/contact' className='link'>
+          <Link to='/contact' className={`link ${location.pathname === '/contact' && 'active'}`}>
             Contact
           </Link>
         </li>
       </ul>
       <div className='header-buttons'>
-        <Link to='/login' className='link px-2'>
+        <Link to='/login' className={`link px-2 ${location.pathname === '/login' && 'active'}`}>
           Login
         </Link>
         <ButtonComponent icon='src/assets/arrow-right.svg' text='Get Started' />

@@ -60,6 +60,9 @@ const FooterComponent = () => {
           </div>
         </div>
       </div>
+      <div className='footer-bottom-part max-width-2xl'>
+        <p>©2024 Mentor Token. All right reserved.</p>
+      </div>
     </footer>
   )
 }

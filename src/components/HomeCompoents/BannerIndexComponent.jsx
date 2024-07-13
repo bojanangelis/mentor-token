@@ -1,6 +1,6 @@
-import React from 'react'
+/* eslint-disable react/no-unescaped-entities */
 import './BannerIndexStyle.scss'
-import { featureCardMockData } from '../utils/features-card'
+import { featureCardMockData } from '../../utils/features-card'
 import FeatureCard from './FeatureCard'
 
 const BannerIndexComponent = () => {

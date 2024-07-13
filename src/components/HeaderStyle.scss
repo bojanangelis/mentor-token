@@ -16,6 +16,10 @@ header {
       }
     }
   }
+
+  .active {
+    color: #696cff;
+  }
   .header-buttons {
     display: flex;
     align-items: center;

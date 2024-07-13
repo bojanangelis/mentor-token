@@ -1,10 +1,10 @@
 import HeaderComponent from '../components/HeaderComponent'
-import MainIndexComponent from '../components/MainIndexComponent'
-import CompaniesIndexComponent from '../components/CompaniesIndexComponent'
-import BannerIndexComponent from '../components/BannerIndexComponent'
-import PictureIndexComponent from '../components/PictureIndexComponent'
-import FooterComponent from '../components/FooterComponent'
+import MainIndexComponent from '../components/HomeCompoents/MainIndexComponent'
+import CompaniesIndexComponent from '../components/HomeCompoents/CompaniesIndexComponent'
+import BannerIndexComponent from '../components/HomeCompoents/BannerIndexComponent'
+import PictureIndexComponent from '../components/HomeCompoents/PictureIndexComponent'
 import UseScrollToTop from '../hooks/useScrollToTop'
+import FooterComponent from '../components/FooterComponent'
 
 const IndexPage = () => {
   return (
