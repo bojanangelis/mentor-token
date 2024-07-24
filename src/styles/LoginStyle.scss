@@ -1,0 +1,90 @@
+.login-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-div {
+  min-width: 500px;
+  max-width: 700px;
+  z-index: 9999999999;
+  text-align: left;
+}
+
+.text-paragraph {
+  color: #aab4bf;
+  padding-bottom: 45px;
+}
+.text-login {
+  color: #566a7f;
+  font-size: 34px;
+  line-height: 89px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.login-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.login--input--div {
+  position: relative;
+  margin-top: 20px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  border: 2px solid #d3d3ff;
+}
+
+.login--label {
+  color: #696cff;
+  background-color: white;
+  position: absolute;
+  top: -12px;
+  left: 18.5px;
+  display: none;
+  padding: 0 10px;
+}
+.login--input--div .login--label {
+  opacity: 0; /* Start with the label hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+}
+
+.login--input--div:hover .login--label,
+.login--input--div:focus-within .login--label {
+  display: inline;
+  opacity: 1;
+}
+
+.setup--label {
+  position: absolute;
+  top: -30px;
+}
+
+.login--input--div:hover .setup--label,
+.login--input--div:focus-within .setup--label {
+  display: none;
+}
+
+.login--input--div:hover,
+.login--input--div:focus-within {
+  border-color: #696cff;
+}
+
+.login---button {
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.cube-img {
+  display: flex;
+  padding-bottom: 60px;
+}
+
+.span--register {
+  padding-top: 20px;
+  text-align: center;
+  color: #566a7f;
+}

@@ -14,3 +14,9 @@
     margin-right: 10px;
   }
 }
+
+button:disabled,
+button[disabled] {
+  background-color: #d3d3ff;
+  cursor: not-allowed;
+}

@@ -18,7 +18,7 @@ const AuthLayout = () => {
             </div>
           </div>
         </div>
-        <img className='rocket-auth' width={600} height={700} src='/src/assets/rocket-02.png' />
+        <img className='rocket-auth' width={800} height={700} src='/src/assets/rocket-02.png' />
       </div>
       <div className='right-side'>
         <Outlet />
