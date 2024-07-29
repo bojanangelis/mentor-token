@@ -23,7 +23,6 @@ export const mockData = [
   },
   {
     img: 'src/assets/james.png',
-
     name: 'James Vial',
     major: 'Head of Front-end',
     description: 'Culinary artist, explores diverse flavors, skilled in cookingn',

@@ -56,6 +56,14 @@ function App() {
           path: '/dashboard',
           element: <DashboardPage />,
         },
+        {
+          path: '/jobs',
+          element: <DashboardPage />,
+        },
+        {
+          path: '/mentors',
+          element: <DashboardPage />,
+        },
       ],
     },
   ])
