@@ -10,6 +10,8 @@ import SetupAccount from './routes/SetupAccount'
 import SetupMentor from './routes/SetupMentor'
 import DashboardPage from './routes/DashboardPage'
 import DashboardLayout from './routes/DashboardLayout'
+import MentorsPage from './routes/MentorsPage'
+import MentorsPageByID from './routes/MentorsPageByID'
 
 function App() {
   const router = createBrowserRouter([
@@ -57,11 +59,15 @@ function App() {
           element: <DashboardPage />,
         },
         {
-          path: '/jobs',
-          element: <DashboardPage />,
+          path: '/mentors',
+          element: <MentorsPage />,
         },
         {
-          path: '/mentors',
+          path: ':id',
+          element: <MentorsPageByID />,
+        },
+        {
+          path: '/jobs',
           element: <DashboardPage />,
         },
       ],

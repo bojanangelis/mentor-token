@@ -1,0 +1,78 @@
+.mentor--card-new--view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.profile--view-card {
+  display: flex;
+}
+
+.profile--view-card--text {
+  margin-left: 20px;
+  text-align: left;
+  h2 {
+    font-weight: 500;
+    font-size: 20px;
+  }
+}
+
+.buttons-view-mentor {
+  display: flex;
+  flex-direction: column;
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #696cff;
+    text-align: right;
+    padding-bottom: 60px;
+  }
+  img {
+  }
+}
+
+.mentor-view-className {
+  padding: 8px 12px !important;
+  font-size: medium;
+  justify-content: flex-end;
+}
+
+.about--mentor__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+
+  background-color: white;
+  padding: 20px;
+  width: 30%;
+}
+
+.about--mentor-view-02 {
+  background-color: white;
+  margin-left: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 70%;
+  border-radius: 20px;
+
+  p {
+    font-size: small;
+    color: #566a7f;
+  }
+}
+
+.div-about-mentor-component {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}

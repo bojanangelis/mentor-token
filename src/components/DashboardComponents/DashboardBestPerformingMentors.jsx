@@ -18,7 +18,7 @@ const DashboardBestPerformingMentors = () => {
               <img width={46} height={46} src={mentor.img} />
               <p className='px-2'>{mentor.name}</p>
             </div>
-            <span>
+            <span className='mentor--achieved-jobs'>
               {mentor.jobs} <span>Achieved Jobs</span>
             </span>
             <ChevronUpRightIcon />

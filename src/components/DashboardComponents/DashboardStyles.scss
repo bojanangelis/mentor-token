@@ -120,7 +120,7 @@
 
 .mentor--view--perform {
   display: flex;
-  padding: 20px 10px;
+  padding: 20px;
   border-top: 1px solid #cbc6d726;
   border-bottom: 1px solid #cbc6d726;
   align-items: center;
@@ -140,9 +140,31 @@
 }
 
 .overallStatistic--view {
-  display: inline;
-  img {
-    width: 100%;
-    padding-top: 20px;
+  margin-top: 20px;
+  text-align: left;
+  color: #566a7f;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  h2 {
+    padding-left: 10px;
+  }
+}
+
+.chart-apex {
+}
+
+.mentor--achieved-jobs {
+  color: #696cff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  span {
+    // za deteto vntare shto e staj ja ovaa boja.
+    color: #566a7f;
+    font-weight: 400;
   }
 }
