@@ -12,6 +12,7 @@ import DashboardPage from './routes/DashboardPage'
 import DashboardLayout from './routes/DashboardLayout'
 import MentorsPage from './routes/MentorsPage'
 import MentorsPageByID from './routes/MentorsPageByID'
+import JobsPage from './routes/JobsPage'
 
 function App() {
   const router = createBrowserRouter([
@@ -68,7 +69,7 @@ function App() {
         },
         {
           path: '/jobs',
-          element: <DashboardPage />,
+          element: <JobsPage />,
         },
       ],
     },

@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import ButtonComponent from '../components/ButtonComponent'
 import { useNavigate } from 'react-router-dom'
 import '../styles/LoginStyle.scss'
 import '../styles/SetupStyle.scss'
+import UploadImage from '../components/uploadImg'
 
 const SetupAccount = () => {
   const navigate = useNavigate()
   const [startupName, setStartupName] = useState('')
   const [password, setPassword] = useState('')
+
   const [flags, setFlags] = useState({
     emailAndPassword: false,
     least8Char: false,
@@ -21,6 +23,7 @@ const SetupAccount = () => {
         <h2 className='text-login'>Setup Startup Account </h2>
 
         <div className='login-inputs'>
+          <UploadImage />
           <div className='login--input--div my-4'>
             <label className='setup--label'>Startup Name</label>
             <label className='login--label'>Startup Name</label>
