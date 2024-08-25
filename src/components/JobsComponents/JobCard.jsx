@@ -2,7 +2,7 @@ import React from 'react'
 import './JobCard.scss'
 import ButtonComponent from '../ButtonComponent'
 
-const JobCard = ({ id, companyName, title, description, imageUrl, button }) => {
+const JobCard = ({ id, companyName, title, description, imageUrl, button, onClick }) => {
   return (
     <div className='job-card-view'>
       <div className='card--header'>
@@ -13,7 +13,7 @@ const JobCard = ({ id, companyName, title, description, imageUrl, button }) => {
       <h5>{title}</h5>
       <p>{description}</p>
       <div>
-        <ButtonComponent text={button} className={'view--job-btn'} />
+        <ButtonComponent onClick={() => onClick(id)} text={button} className={'view--job-btn'} />
       </div>
     </div>
   )

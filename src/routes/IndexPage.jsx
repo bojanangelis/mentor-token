@@ -17,7 +17,7 @@ const IndexPage = () => {
         <BannerIndexComponent />
         <PictureIndexComponent />
       </div>
-
+      {/* custom hook */}
       <UseScrollToTop />
       <FooterComponent />
     </>

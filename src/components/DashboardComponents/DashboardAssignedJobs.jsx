@@ -3,9 +3,9 @@ import './DashboardStyles.scss'
 import { Link } from 'react-router-dom'
 import { metricsStatus } from '../../utils/assigned-jobs'
 
-const DashboardAssignedJobs = () => {
+const DashboardAssignedJobs = ({ className }) => {
   return (
-    <div className='AssignedJobsView'>
+    <div className={`AssignedJobsView ${className}`}>
       <div className='assignedJobs--container-links'>
         <h4>Assigned Jobs</h4>
         <nav className='nav--assigned--jobs'>

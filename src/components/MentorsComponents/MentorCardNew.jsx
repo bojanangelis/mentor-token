@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './MentorCardStyle.scss'
 import ButtonComponent from '../ButtonComponent'
+import { useNavigate } from 'react-router-dom'
 
 const MentorCardNew = ({
   id,
@@ -13,6 +14,7 @@ const MentorCardNew = ({
   linkedIn,
   trending,
 }) => {
+  const navigate = useNavigate()
   console.log('skills', skills)
   // console.log(skills.length)
   const ignore = skills.length - 1
@@ -73,7 +75,11 @@ const MentorCardNew = ({
             <img width={20} src='src/assets/trending.svg' /> Trending{' '}
           </span>
         )}
-        <ButtonComponent className={'mentor-view-className'} text='View Mentor' />
+        <ButtonComponent
+          onClick={() => navigate(`/${name}`)}
+          className={'mentor-view-className'}
+          text='View Mentor'
+        />
       </div>
     </div>
   )

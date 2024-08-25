@@ -50,7 +50,6 @@ function App() {
         },
       ],
     },
-
     {
       path: '/',
       element: <DashboardLayout />,
@@ -64,7 +63,7 @@ function App() {
           element: <MentorsPage />,
         },
         {
-          path: ':id',
+          path: '/:id',
           element: <MentorsPageByID />,
         },
         {

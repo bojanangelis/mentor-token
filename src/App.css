@@ -311,3 +311,20 @@
     font-family: Graphik, Arial, Helvetica, sans-serif;
   }
 }
+
+.dashboardMentors {
+  width: 100% !important;
+}
+
+.hide-scroll {
+  overflow: hidden; /* Hides both horizontal and vertical scrollbars */
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in WebKit-based browsers (e.g., Chrome, Safari) */
+}
+
+.hide-scroll {
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer 10+ */
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+}
