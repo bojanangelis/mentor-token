@@ -13,11 +13,6 @@ const MentorCardNew = ({
   linkedIn,
   trending,
 }) => {
-  console.log('skills', skills)
-  // console.log(skills.length)
-  const ignore = skills.length - 1
-  console.log('ignore-->', ignore)
-
   return (
     <div className='mentor--card-new--view'>
       <div className='profile--view-card'>
@@ -30,17 +25,7 @@ const MentorCardNew = ({
 
           <span>
             {/* polni dzvezdi */}
-            {Array(Math.floor(rating))
-              ?.fill()
-              ?.map((_, i) => (
-                <img key={i} src='src/assets/full-star.svg' />
-              ))}
-            {/* ne polni zvezdi (prazni) */}
-            {Array(Math.floor(6 - rating))
-              ?.fill()
-              ?.map((_, i) => (
-                <img key={i} src='src/assets/empty-star.svg' />
-              ))}
+
             <span className='px-2'>{rating} average based on KPI success rate.</span>
           </span>
 
@@ -49,15 +34,13 @@ const MentorCardNew = ({
               {/*   ignore:    3  */}
               Skills:{/*     0      , 1   ,   2,  3,  4    */}
               {/*        [menagment, data, blabla],  */}
-              {skills.map((skill, i) => (
+              {skills?.map((skill, i) => (
                 // 0
                 // 1
                 // 2
                 // 3
                 // 4
                 <span key={i}>
-                  {console.log(i)}
-                  {console.log('proverkia--> ignore > i ', ignore > i && ' | ')}
                   {skill} {ignore > i && ' | '}
                 </span>
               ))}
