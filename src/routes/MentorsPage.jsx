@@ -27,30 +27,17 @@ const MentorsPage = () => {
         ?.filter((mentor) => mentor.role === 'mentor')
         ?.map((data) => (
           <MentorCardNew
-            key={data.id}
+            key={data._id}
+            id={data._id}
             linkedIn={data.linkedIn}
             trending={data.trending}
-            profilePicture={data.profilePicture}
+            profilePicture={data.image}
             name={data.name}
-            id={data.id}
             description={data.description}
             skills={data.skills}
             rating={data.rating}
           />
         ))}
-      {/* {mentors.filter((data) => data.role === 'mentor' =>  (
-        <MentorCardNew
-          key={data.id}
-          linkedIn={data.linkedIn}
-          trending={data.trending}
-          profilePicture={data.profilePicture}
-          name={data.name}
-          id={data.id}
-          description={data.description}
-          skills={data.skills}
-          rating={data.rating}
-        />
-      ))} */}
     </div>
   )
 }

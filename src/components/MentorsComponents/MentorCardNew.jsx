@@ -14,6 +14,8 @@ const MentorCardNew = ({
   linkedIn,
   trending,
 }) => {
+  const navigate = useNavigate()
+  console.log(profilePicture)
   return (
     <div className='mentor--card-new--view'>
       <div className='profile--view-card'>
@@ -58,7 +60,7 @@ const MentorCardNew = ({
           </span>
         )}
         <ButtonComponent
-          onClick={() => navigate(`/${name}`)}
+          onClick={() => navigate(`/${id}`)}
           className={'mentor-view-className'}
           text='View Mentor'
         />

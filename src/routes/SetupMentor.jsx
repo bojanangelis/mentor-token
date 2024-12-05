@@ -1,18 +1,35 @@
 import React, { useState } from 'react'
 import ButtonComponent from '../components/ButtonComponent'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import '../styles/LoginStyle.scss'
 import '../styles/SetupStyle.scss'
 
 const SetupMentor = () => {
   const navigate = useNavigate()
-  const [startupName, setStartupName] = useState('')
-  const [password, setPassword] = useState('')
-  const [flags, setFlags] = useState({
-    emailAndPassword: false,
-    least8Char: false,
-    containsNumOrSim: false,
-  })
+  const { id } = useParams()
+  const [mentorName, setMentorName] = useState('')
+  const [mentorImage, setMentorImage] = useState('')
+
+  const handleUpdateMentor = async () => {
+    try {
+      const update = await fetch(`http://localhost:8000/api/users/update/${id}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: mentorName,
+          image: mentorImage,
+        }),
+      })
+      const x = await update?.json()
+      if (x?.message === 'User updated successfully') {
+        navigate('/login')
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
 
   return (
     <div className='login-form'>
@@ -25,28 +42,28 @@ const SetupMentor = () => {
             <label className='setup--label'>Mentor Name</label>
             <label className='login--label'>Mentor Name</label>
             <input
-              value={startupName}
-              onChange={(e) => setStartupName(e.target.value)}
+              value={mentorName}
+              onChange={(e) => setMentorName(e.target.value)}
               className='input_con'
               type='text'
               placeholder='My Mentor Name'
             />
           </div>
-          <div className='login--input--div  my-4'>
-            <label className='setup--label'>Startup Name</label>
-            <label className='login--label'>Startup Name</label>
+
+          <div className='login--input--div my-4'>
+            <label className='setup--label'>Mentor Image URL</label>
+            <label className='login--label'>Mentor Image URL</label>
             <input
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={mentorImage}
+              onChange={(e) => setMentorImage(e.target.value)}
               className='input_con'
               type='text'
-              placeholder='Password'
+              placeholder='My Mentor Image URL'
             />
           </div>
 
           <ButtonComponent
-            onClick={() => navigate('/')}
-            disabled={!flags.containsNumOrSim || !flags.emailAndPassword || !flags.least8Char}
+            onClick={handleUpdateMentor}
             className='login---button'
             text='Register'
           />

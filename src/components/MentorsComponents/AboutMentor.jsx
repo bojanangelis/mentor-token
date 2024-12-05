@@ -1,13 +1,13 @@
 import React from 'react'
 
-const AboutMentor = () => {
+const AboutMentor = ({ user }) => {
   return (
     <div className='about--mentor__card'>
-      <img width={94} height={94} src='src/assets/alex_jansen.png' />
-      <h4>Kierra Press</h4>
-      <p>Sales Representative</p>
-      <p>mentormail@mail.com</p>
-      <p>+389 77 663 234</p>
+      <img style={{ borderRadius: '50%' }} width={94} height={94} src={user?.image} />
+      <h4>{user?.name}</h4>
+      <p>{user?.description}</p>
+      <p>{user?.email}</p>
+      <p>{user?.number}</p>
     </div>
   )
 }

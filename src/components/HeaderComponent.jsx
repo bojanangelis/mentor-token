@@ -31,7 +31,9 @@ const HeaderComponent = () => {
         <Link to='/login' className={`link px-2 ${location.pathname === '/login' && 'active'}`}>
           Login
         </Link>
-        <ButtonComponent icon='src/assets/arrow-right.svg' text='Get Started' />
+        <Link to='/login'>
+          <ButtonComponent icon='src/assets/arrow-right.svg' text='Get Started' />
+        </Link>
       </div>
     </header>
   )

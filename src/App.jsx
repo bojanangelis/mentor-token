@@ -41,11 +41,11 @@ function App() {
           element: <Register />,
         },
         {
-          path: '/setup-account',
+          path: '/setup-account/:id',
           element: <SetupAccount />,
         },
         {
-          path: '/setup-mentor',
+          path: '/setup-mentor/:id',
           element: <SetupMentor />,
         },
       ],

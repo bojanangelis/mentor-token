@@ -7,36 +7,66 @@ const Register = () => {
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
-  const [activeBtn, setActiveBtn] = useState('Startup')
+  const [activeBtn, setActiveBtn] = useState('company')
+  const [users, setUsers] = useState(null)
 
   const [flags, setFlags] = useState({
+    alreadyHasAccount: false,
     emailAndPassword: false,
     least8Char: false,
     containsNumOrSim: false,
   })
 
   useEffect(() => {
+    const fetchUsers = async () => {
+      const fetchData = await fetch('http://localhost:8000/api/users')
+      setUsers(await fetchData?.json())
+    }
+
+    fetchUsers()
+  }, [])
+
+  useEffect(() => {
     const check = /[0-9!-/:-@[-`{-~]/
     const containsNumOrSim = check.test(password)
     const emailAndPassword = email !== password
     const least8Char = password.length >= 8
+    const alreadyHasAccount = users?.some((user) => user.email === email)
 
     // Update flags accordingly
     setFlags({
       ...flags,
+      alreadyHasAccount,
       containsNumOrSim,
       emailAndPassword,
       least8Char,
     })
-  }, [email, password])
+  }, [email, password, users])
 
-  const handleContinueButton = () => {
-    if (activeBtn === 'Startup') {
-      navigate('/setup-account')
-    }
-    if (activeBtn === 'Mentor') {
-      navigate('/setup-mentor')
+  const handleRegisterUserOrCompany = async () => {
+    try {
+      const register = await fetch('http://localhost:8000/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          role: activeBtn,
+        }),
+      })
+
+      const x = await register?.json()
+
+      if (activeBtn === 'company') {
+        navigate(`/setup-account/${x._id}`)
+      }
+      if (activeBtn === 'mentor') {
+        navigate(`/setup-mentor/${x._id}`)
+      }
+    } catch (e) {
+      console.error(e)
     }
   }
 
@@ -47,13 +77,13 @@ const Register = () => {
         <h2 className='text-login'>Choose Account type</h2>
         <div className='register--buttons'>
           <ButtonComponent
-            onClick={() => setActiveBtn('Startup')}
-            className={activeBtn !== 'Startup' ? 'register-button non-active' : 'register-button'}
+            onClick={() => setActiveBtn('company')}
+            className={activeBtn !== 'company' ? 'register-button non-active' : 'register-button'}
             text='Startup'
           />
           <ButtonComponent
-            onClick={() => setActiveBtn('Mentor')}
-            className={activeBtn !== 'Mentor' ? 'register-button non-active' : 'register-button'}
+            onClick={() => setActiveBtn('mentor')}
+            className={activeBtn !== 'mentor' ? 'register-button non-active' : 'register-button'}
             text='Mentor'
           />
         </div>
@@ -80,8 +110,21 @@ const Register = () => {
 
           <div className='py-2'>
             <span className='checkmark'>
-              <img src='/src/assets/checkmark.svg' alt='' />
-              Already have account? Login.
+              <img
+                src={
+                  flags.alreadyHasAccount
+                    ? '/src/assets/checkmark-active.svg'
+                    : '/src/assets/checkmark.svg'
+                }
+                alt=''
+              />
+              Already have account?
+              {flags.alreadyHasAccount && (
+                <Link style={{ textDecoration: 'none', marginLeft: 8 }} to='/login'>
+                  {' '}
+                  Login.
+                </Link>
+              )}
             </span>
             <span className='checkmark'>
               <img
@@ -120,8 +163,13 @@ const Register = () => {
           </div>
 
           <ButtonComponent
-            onClick={handleContinueButton}
-            disabled={!flags.containsNumOrSim || !flags.emailAndPassword || !flags.least8Char}
+            onClick={handleRegisterUserOrCompany}
+            disabled={
+              flags.alreadyHasAccount ||
+              !flags.containsNumOrSim ||
+              !flags.emailAndPassword ||
+              !flags.least8Char
+            }
             className='login---button'
             text='Continue'
           />

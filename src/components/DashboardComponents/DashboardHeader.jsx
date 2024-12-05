@@ -1,7 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './DashboardStyles.scss'
+import { jwtDecode } from 'jwt-decode'
 
 const DashboardHeader = () => {
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+    const decodeToken = (token) => {
+      try {
+        const decoded = jwtDecode(token)
+        return decoded
+      } catch (error) {
+        return null
+      }
+    }
+
+    // Example Usage
+    const token = localStorage.getItem('token') // Assuming you store the token in localStorage
+    if (token) {
+      setUser(decodeToken(token))
+    }
+  }, [])
+
   return (
     <div className='header-dashboard-component'>
       <div className='input__search--dashboard'>
@@ -24,8 +44,13 @@ const DashboardHeader = () => {
       </div>
 
       <div className='techWave--Innovations'>
-        <img width={56} height={56} src='src/assets/logout-img.png' />
-        <p className='text-tech--wave'>TechWave Innovations</p>
+        <img
+          style={{ borderRadius: '50%' }}
+          width={56}
+          height={56}
+          src={user?.image ? user?.image : 'src/assets/logout-img.png'}
+        />
+        <p className='text-tech--wave'>{user?.name}</p>
       </div>
     </div>
   )

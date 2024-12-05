@@ -24,8 +24,6 @@ const Modal = ({ onClose, isOpen, children }) => {
     }
   }
 
-  console.log('children here-->', children)
-
   if (!isOpen && !activeModel) return null
   return (
     <div

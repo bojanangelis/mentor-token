@@ -113,6 +113,8 @@
 }
 
 .mentor-view--container--best {
+  height: 420px;
+  overflow-y: scroll;
   background-color: white;
   border-radius: 12px;
   margin-top: 45px;

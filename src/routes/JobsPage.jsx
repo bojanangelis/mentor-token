@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import DashboardHeader from '../components/DashboardComponents/DashboardHeader'
 import FilterJobsComponent from '../components/JobsComponents/FilterJobsComponent'
-import jobsData from '../utils/jobs'
 import JobCard from '../components/JobsComponents/JobCard'
 import Modal from '../components/Modal'
 import CustomPortal from '../hooks/customPortal'
@@ -10,23 +9,26 @@ const JobsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [jobSelected, setJobSelected] = useState(null)
 
+  const [jobData, setJobData] = useState(null)
+
   const onClose = () => {
     setIsModalOpen(false)
   }
 
-  const handleJobOpenModal = (id) => {
-    const renderThisJob = jobsData?.filter((job) => job.id === id)
-    if (renderThisJob?.length > 0) {
-      // tuka vikame ako slucajno vo nizava stho ja imame od jobsData imame podatok od toa id shto e kliknato
-      // togash prikazi mi ja cel obiekt
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const x = await fetch('http://localhost:8000/api/job')
+      setJobData(await x?.json())
+    }
+    fetchJobs()
+  }, [])
 
-      // .filter --> funkcijava sekogash vrajka niza od obiekti
-      // vo situacijava sekogash ke bide niza od 0
+  const handleJobOpenModal = (id) => {
+    const renderThisJob = jobData?.filter((job) => job._id === id)
+    if (renderThisJob?.length > 0) {
+      console.log(renderThisJob)
       setJobSelected(renderThisJob[0])
       setIsModalOpen(true)
-      console.log('this job is', renderThisJob)
-      console.log('yes this is correct')
-      console.log('this is id-->', id)
     }
   }
 
@@ -47,15 +49,17 @@ const JobsPage = () => {
         <FilterJobsComponent />
 
         <div className='grid grid-col-4 gap-4 pt-4'>
-          {jobsData.map((job) => (
+          {jobData?.map((job) => (
             <JobCard
-              key={job.id}
-              id={job.id}
-              companyName={job.companyName}
-              title={job.title}
-              description={job.description}
-              imageUrl={job.imageUrl}
-              ctaText={job.ctaText}
+              key={job?._id}
+              id={job?._id}
+              companyName={job?.companyName}
+              company_id={job?.company_id}
+              title={job?.title}
+              description={job?.description}
+              imageUrl={job?.imageUrl}
+              ctaText={job?.ctaText}
+              isActive={job?.isActive}
               button='View More'
               onClick={handleJobOpenModal}
             />
