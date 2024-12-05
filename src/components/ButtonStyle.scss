@@ -1,0 +1,22 @@
+.button-primary {
+  display: flex;
+  align-items: center;
+  border-radius: 9px;
+  padding: 16px 24px;
+  border: none;
+  background-color: #696cff;
+  color: white;
+  font-size: larger;
+  font-weight: 500;
+  cursor: pointer;
+
+  img {
+    margin-right: 10px;
+  }
+}
+
+button:disabled,
+button[disabled] {
+  background-color: #d3d3ff;
+  cursor: not-allowed;
+}

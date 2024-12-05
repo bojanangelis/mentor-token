@@ -1,0 +1,23 @@
+.filter--view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.secondary-button {
+  background-color: white;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.type-of-view {
+  padding: 10px 10px;
+  margin: 0;
+  img {
+    margin: 0;
+  }
+}

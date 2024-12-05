@@ -1,0 +1,37 @@
+.main-index__bg {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 20px;
+  height: 700px;
+  background-image: url('../../assets/unsplash.png');
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+.main-laptop__img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 20px;
+  z-index: 20;
+  object-fit: contain;
+}
+
+.main--div__text {
+  padding: 80px;
+  position: relative;
+  z-index: 9999;
+  width: 500px;
+  h1 {
+    font-size: 36px;
+    text-align: left;
+  }
+  p {
+    color: gray;
+    text-align: left;
+  }
+  .main--div__buttons {
+    display: flex;
+    align-items: center;
+  }
+}

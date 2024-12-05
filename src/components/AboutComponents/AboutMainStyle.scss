@@ -1,0 +1,27 @@
+.about-contact-index__bg {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 20px;
+  height: 300px;
+  background-image: url('../../assets/unsplash.png');
+  background-position: cover;
+  background-repeat: no-repeat;
+  text-align: left;
+  padding: 120px;
+}
+
+.about-title {
+  text-align: center;
+}
+
+.about-get-in-touch {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.mockdata-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

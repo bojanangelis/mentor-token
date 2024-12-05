@@ -1,0 +1,28 @@
+.footer-component {
+  max-width: 100%;
+  min-width: 100%;
+  background-color: #232323;
+  color: white; // ova ke go efektira se vnatre so ima
+}
+
+.main-footer {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mentor-footer-text {
+  width: 320px;
+}
+
+.link-footer {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom-part {
+  text-align: left;
+  border-top: 1px solid gray;
+  padding: 14px;
+}

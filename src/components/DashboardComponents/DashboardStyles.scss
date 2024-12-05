@@ -1,0 +1,170 @@
+.header-dashboard-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input__search--dashboard {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 12px 18px;
+  border-radius: 20px;
+  width: 400px;
+}
+
+.input__search--view {
+  margin-left: 10px;
+  outline: none;
+  border: none;
+  flex: 1;
+}
+
+.techWave--Innovations {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-tech--wave {
+  width: 60px;
+  text-align: start;
+  padding: 0 10px;
+  color: #566a7f;
+}
+
+.AssignedJobsView {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  align-items: flex-start;
+  width: 50%;
+}
+
+.assignedJobs--container-links {
+  text-align: left;
+  padding-bottom: 20px;
+  h4 {
+    color: #404d61;
+  }
+}
+
+.nav--assigned--jobs {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #d3d3ff;
+
+  a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: #566a7f;
+    border-bottom: 1px solid transparent;
+  }
+  a:first-child {
+    margin-left: 0;
+  }
+  a:hover {
+    color: #696cff;
+    border-bottom: 1px solid #696cff;
+  }
+}
+
+.card--job-view {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.DONE {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: #ebf6eb;
+  color: #31aa27;
+}
+
+.REJECTED {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: #fff0f3;
+  color: #f2076a;
+}
+
+.IN_PROGRESS {
+  padding: 8px 12px;
+  border-radius: 20px;
+  background-color: #d3d3ff66;
+  color: #696cff;
+}
+
+.cards-job-view {
+  width: 100%;
+}
+
+.dashboard--best-perform-men {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 40px;
+  color: #404d61;
+  width: 100%;
+}
+
+.mentor-view--container--best {
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 45px;
+}
+
+.mentor--view--perform {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid #cbc6d726;
+  border-bottom: 1px solid #cbc6d726;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mentor-image-paragraph {
+  display: flex;
+  align-items: center;
+}
+
+.chevron--up-right--active {
+  svg,
+  path {
+    fill: #6c6eff;
+  }
+}
+
+.overallStatistic--view {
+  margin-top: 20px;
+  text-align: left;
+  color: #566a7f;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  h2 {
+    padding-left: 10px;
+  }
+}
+
+.chart-apex {
+}
+
+.mentor--achieved-jobs {
+  color: #696cff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  span {
+    // za deteto vntare shto e staj ja ovaa boja.
+    color: #566a7f;
+    font-weight: 400;
+  }
+}

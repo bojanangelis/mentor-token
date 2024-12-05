@@ -1,0 +1,40 @@
+.upload__picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; // this is a must if we do in the child position absolute
+}
+
+.icon--upload {
+  position: relative;
+  cursor: pointer;
+}
+
+.camera-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.hidden {
+  display: none;
+  object-fit: contain;
+}
+
+.img--uploaded {
+  border-radius: 50%;
+}
+.fileInputComponent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.fileInputComponent p {
+  color: red;
+}

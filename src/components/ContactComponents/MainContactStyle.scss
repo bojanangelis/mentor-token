@@ -1,0 +1,68 @@
+.main-contact-index__bg {
+  position: relative;
+  margin-top: 40px;
+  border-radius: 20px;
+  height: 500px;
+  background-image: url('../../assets/unsplash.png');
+  background-position: cover;
+  background-repeat: no-repeat;
+  text-align: left;
+  padding: 120px;
+}
+
+.contact-title {
+  padding-bottom: 40px;
+}
+
+.paragraph-contact {
+  color: #222;
+}
+
+.inputs--contact {
+  padding-top: 50px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-contact {
+  width: 48%;
+  height: 48px;
+  border-radius: 20px;
+  display: flex;
+  border: 1.4px solid #696cff;
+}
+
+.input_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  padding-left: 20px;
+  flex-grow: 1;
+  outline: none;
+}
+
+.textarea-con {
+  outline: none;
+  border: 1.4px solid #696cff;
+  margin-top: 40px;
+  width: 100%;
+  height: 80px;
+  border-radius: 20px;
+  text-indent: 20px;
+  background-color: transparent;
+  line-height: normal;
+}
+
+textarea {
+  padding-top: 14px;
+  font-size: 1rem;
+}
+
+.button-send-message {
+  display: flex;
+  justify-content: flex-end;
+}

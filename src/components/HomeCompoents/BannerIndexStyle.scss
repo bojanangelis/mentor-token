@@ -1,0 +1,30 @@
+.banner--component {
+  height: 600px;
+  width: 100%;
+  position: relative;
+  border-radius: 20px;
+  background: linear-gradient(to right, #696cff 0%, #9574ff 100%);
+
+  .img_banner--rocket {
+    position: absolute;
+    right: 0;
+    top: -320px;
+  }
+}
+
+.banner--div--title {
+  padding-top: 60px;
+  color: white;
+  width: 500px;
+  margin: 0 auto;
+  font-weight: 400;
+  h1 {
+    font-weight: 400;
+  }
+}
+
+.feature-map {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
